@@ -1,0 +1,14 @@
+{
+    "jumpToAliasFile.alias": {
+        "vue$": "vue/dist/vue.runtime.esm-bundler.js",
+        "@": "/Users/youqun/myProject/webpack-5-dev/src",
+        "extensions": [
+            ".mjs",
+            ".js",
+            ".jsx",
+            ".vue",
+            ".json",
+            ".wasm"
+        ]
+    }
+}

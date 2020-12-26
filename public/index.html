@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const params = {
+      ak: '78LhWmES1cMu2EaCHeBeeZ91Afhuc6Ei',
+      coor: 'bd09ll'
+      // callback: 'getLocation'
+    }
+    // axios
+    //   .get('http://api.map.baidu.com/location/ip?', { params })
+    //   .then(value => {
+    //     console.log(value)
+    //   })
+
+    function callback(data) {
+      console.log(data)
+    }
+
+    $.ajax({
+      method: 'get',
+      url: 'http://api.map.baidu.com/location/ip?',
+      data: { ...params },
+      dataType: 'jsonp',
+      jsonpCallback: 'callback', //jsonpCallback是实现跨域请求的时候定义回调函数用的 ，可以随意起名字
+      success: function (data) {
+        callback(data)
+      },
+      error: function (data) {}
+    })
+    
+  </script>
+</html>
